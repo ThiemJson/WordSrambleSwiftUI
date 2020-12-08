@@ -10,7 +10,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView{
+            List {
+                Section(header:Text("List1")){
+                    ForEach(0..<100) {
+                        Text("Dynamic row \($0)")
+                    }
+                }
+            }
+            .navigationBarItems(leading:
+                Button(action: {
+                    //TODO
+                }){
+                    Text("Back")
+                }
+            )
+                .navigationBarTitle("Testing List",displayMode: .inline)
+        }
     }
 }
 
